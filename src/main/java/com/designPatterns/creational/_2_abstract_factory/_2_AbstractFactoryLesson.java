@@ -4,7 +4,7 @@ public class _2_AbstractFactoryLesson {
 
     public static void main(String[] args) {
         Factory carFactory = new AbstractFactory().createFactory("Car");
-        Factory tankFactory = new AbstractFactory().createFactory("Tank");
+        Factory tankFactory = new AbstractFactory().createFactory("Tank2");
         Car toyota = (Car) carFactory.create("Toyota");
         Car audi = (Car) carFactory.create("Audi");
         toyota.drive();
@@ -36,7 +36,7 @@ class CarFactory implements Factory {
         switch (typeOfCar) {
             case "Toyota":
                 return new Toyota();
-            case "Audi":
+            case "Audidi":
                 return new Audi();
             default:
                 return null;
@@ -44,18 +44,18 @@ class CarFactory implements Factory {
     }
 }
 
-interface Tank {
+interface Tank2 {
     void drive();
 }
 
-class T51 implements Tank {
+class T51 implements Tank2 {
     @Override
     public void drive() {
         System.out.println("drive Toyota");
     }
 }
 
-class T52 implements Tank {
+class T52 implements Tank2 {
     @Override
     public void drive() {
         System.out.println("drive Audi");
@@ -63,7 +63,7 @@ class T52 implements Tank {
 }
 
 class TankFactory implements Factory {
-    public Tank create(String typeOfTank) {
+    public Tank2 create(String typeOfTank) {
         switch (typeOfTank) {
             case "T51":
                 return new T51();
@@ -82,7 +82,7 @@ interface Factory {
 class AbstractFactory {
     public Factory createFactory(String typeOfFactory) {
         switch (typeOfFactory){
-            case "Tank" : return new TankFactory();
+            case "Tank2" : return new TankFactory();
             case "Car" : return new CarFactory();
             default: return null;
         }
