@@ -7,6 +7,7 @@ public class ArrayListCollection {
     public static void main(String[] args) {
 //		  some new comment for git
 //		  some another new comment for git
+//        third line - ignoring indexing 
 //        //1. removeIf(Predicate)
 //        ArrayList<Integer> list = new ArrayList();
 //        for(int i = 1; i < 100; i++){
